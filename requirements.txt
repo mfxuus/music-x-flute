@@ -1,0 +1,10 @@
+adafruit-circuitpython-pca9685
+adafruit-circuitpython-motor
+pretty-midi==0.2.9
+
+# bluetooth
+
+
+# websocket server
+websockets==10.2
+python-dotenv
