@@ -1,7 +1,8 @@
+import os
 import pretty_midi
 import threading
 import time
-
+from dotenv import load_dotenv
 
 from board import SCL, SDA
 import busio
@@ -13,6 +14,8 @@ from adafruit_pca9685 import PCA9685
 
 i2c = busio.I2C(SCL, SDA)
 
+load_dotenv()
+
 # Your servos
 MIN_PULSE = 500
 MAX_PULSE = 2500
@@ -21,12 +24,12 @@ ARM_SWING_ANGLE_1 = 60
 ARM_SWING_ANGLE_2 = 80
 
 # Where did you plug your servos?
-SERVO_1_CHANNEL = 11
-SERVO_2_CHANNEL = 8
-SERVO_3_CHANNEL = 7
-SERVO_4_CHANNEL = 4
-SERVO_5_CHANNEL = 3
-SERVO_6_CHANNEL = 0
+SERVO_1_CHANNEL = int(os.environ.get('SERVO_1_CHANNEL', 11))
+SERVO_2_CHANNEL = int(os.environ.get('SERVO_2_CHANNEL', 8))
+SERVO_3_CHANNEL = int(os.environ.get('SERVO_3_CHANNEL', 7))
+SERVO_4_CHANNEL = int(os.environ.get('SERVO_4_CHANNEL', 4))
+SERVO_5_CHANNEL = int(os.environ.get('SERVO_5_CHANNEL', 3))
+SERVO_6_CHANNEL = int(os.environ.get('SERVO_6_CHANNEL', 0))
 
 # 0 back of head, 5 front of head
 NOTE_TO_SERVO_MAP = {
