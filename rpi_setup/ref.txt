@@ -1,0 +1,3 @@
+https://iceburn.medium.com/raspberry-pi-connected-to-wifi-of-wpa2-enterprise-ddd5a40c0b07
+
+https://raspberrypi.stackexchange.com/questions/108769/what-is-the-correct-way-to-connect-serial-console-on-rpi4-model-b
