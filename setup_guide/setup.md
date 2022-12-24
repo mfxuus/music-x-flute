@@ -73,7 +73,7 @@ Then,
 cd ~/music-x-flute
 source ./env/bin/activate
 cd ~/music-x-flute/UI/server
-sudo nano .env
+nano .env
 ````
 In `.env`, write the following, but fill in the IP of rpi4: 
 ````
