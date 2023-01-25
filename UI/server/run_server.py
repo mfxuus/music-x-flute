@@ -7,6 +7,7 @@ import sys
 import json
 import os
 
+import random
 import serial
 import threading
 import queue
@@ -96,7 +97,6 @@ class FluteListener:
 
     def get_current_positions(self):
         if ENV_NAME == 'PC_TEST':
-            import random
             ans = [
                 random.randint(0, 1), random.randint(0, 1), random.randint(0, 1),
                 random.randint(0, 1), random.randint(0, 1), random.randint(0, 1)
@@ -135,6 +135,8 @@ class MainServer:
         asyncio.get_event_loop().run_forever()
 
     def get_note_perc(self):
+        if ENV_NAME == 'PC_TEST':
+            return random.random() * 1.1
         if self.current_note_empty:
             return (time.time() - self.last_change_time)/self.secs_per_note_empty
         else:
